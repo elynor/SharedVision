@@ -79,7 +79,7 @@ function onInit() {
                 callback: (li) => {
                     let actor;
 
-                    if(li.hasAttribute('data-entry-id')) {
+                    if(li.hasAttribute && li.hasAttribute('data-entry-id')) {
                         actor = game.actors.get(li.getAttribute('data-entry-id'));
                     } else {
                         actor = this.constructor.collection.get(li.data("documentId"));
