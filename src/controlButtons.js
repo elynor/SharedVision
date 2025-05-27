@@ -3,7 +3,12 @@ import { shareVision, disableAll } from "./misc.js";
 
 export function pushControlButtons(controls) {
     if (game.user.isGM) {
-        let tokenButton = controls.find((b) => b.name == "token");
+        let tokenButton = controls.tokens
+
+        if (controls.tokens === undefined) {
+            tokenButton = controls.find((b) => b.name == "token");
+        }
+
         if (tokenButton) {
             tokenButton.tools.push(
                 {
